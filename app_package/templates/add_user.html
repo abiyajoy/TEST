@@ -1,0 +1,81 @@
+<!--if we give form action="".the method will go back to itself-->
+
+
+
+{%extends "base.html"%}
+{% block content%}
+<form action="" method="POST"novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+    <legend>Add User</legend>
+    
+    <p>{{form.name.label}}{{form.name(size=32,autofocus=True)}}
+    
+    {% for error in form.name.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    <p>{{form.age.label}}{{form.age(size=32)}}
+    
+    {% for error in form.age.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    <p>{{form.email.label}}{{form.email(size=32)}}
+    
+    {% for error in form.email.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    <p>{{form.mobile.label}}{{form.mobile(size=32)}}
+    
+    {% for error in form.mobile.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    
+    <p>{{form.clocation.label}}{{form.clocation(size=32)}}
+    
+    {% for error in form.clocation.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    
+    
+    <p>{{form.accno.label}}{{form.accno(size=32)}}
+    
+    {% for error in form.accno.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    
+     <p>{{form.priority.label}}{{form.priority(size=32)}}
+    
+    {% for error in form.priority.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    
+      <p>{{form.balance.label}}{{form.balance(size=32)}}
+    
+    {% for error in form.balance.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}
+    </p>
+    
+    
+    
+    
+    
+    <p>{{form.submit()}}</p>
+    </fieldset>
+    <p><a href="{{url_for('menu')}}">menu</a></p>
+</form>
+{% endblock %}
